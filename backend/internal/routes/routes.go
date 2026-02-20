@@ -12,6 +12,12 @@ func SetupRouter() *gin.Engine {
 	// Implement default CORS allowing all origins
 	r.Use(cors.Default())
 
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Welcome to the Event Ticketing API!",
+		})
+	})
+
 	r.POST("/events", handlers.CreateEvent)
 	r.GET("/events", handlers.GetEvents)
 	r.DELETE("/events/:id", handlers.DeleteEvent)
