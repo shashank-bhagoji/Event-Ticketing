@@ -1,4 +1,4 @@
-const API = "http://localhost:8080";
+const API = "https://event-ticketing-4v0x.onrender.com";
 let currentUser = null;
 
 async function handleLogin(isOrganizer) {
