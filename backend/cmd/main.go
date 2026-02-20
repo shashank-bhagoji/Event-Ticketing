@@ -19,7 +19,7 @@ func main() {
 	database.Connect()
 
 	database.DB.AutoMigrate(
-		&models.User{},s
+		&models.User{},
 		&models.Event{},
 		&models.Registration{},
 	)
