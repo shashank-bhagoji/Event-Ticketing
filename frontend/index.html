@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Booking System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>Event Booking System</h1>
+      <p>Discover and book your next experience seamlessly</p>
+    </header>
+    <div id="login-section" class="login-container">
+      <div class="login-card">
+        <h2>Welcome Back</h2>
+        <p>Login or register to continue</p>
+        <div class="input-group">
+          <label for="loginEmail">Email Address</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com">
+        </div>
+        <div class="input-group">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" placeholder="Enter your password">
+        </div>
+        <div class="login-actions">
+          <button class="btn btn-secondary" onclick="handleLogin(false)">Login as User</button>
+          <button class="btn btn-primary" onclick="handleLogin(true)">Login as Organizer</button>
+        </div>
+      </div>
+    </div>
+
+    <main id="main-content" class="main-content hidden">
+      <section id="create-event-section" class="create-event-section hidden">
+        <h2>Create New Event</h2>
+        <div class="form-container">
+          <div class="input-group">
+            <label for="title">Event Title</label>
+            <input id="title" placeholder="e.g., Tech Conference 2026">
+          </div>
+          <div class="input-group">
+            <label for="capacity">Total Capacity</label>
+            <input id="capacity" type="number" placeholder="e.g., 100" min="1">
+          </div>
+          <div class="input-group">
+            <label for="eventDate">Date</label>
+            <input id="eventDate" type="date">
+          </div>
+          <div class="input-group">
+            <label for="eventTime">Time</label>
+            <input id="eventTime" type="time">
+          </div>
+          <button class="btn btn-primary" onclick="handleCreateEvent()" style="grid-column: 1 / -1;">Create
+            Event</button>
+        </div>
+      </section>
+
+      <section class="events-section">
+        <h2>Available Events</h2>
+        <div id="events" class="events-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="register-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h2>Complete Registration</h2>
+      <p>Click confirm to secure your spot for this event.</p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="submitRegistration()">Confirm Registration</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
